@@ -1,0 +1,15 @@
+{
+    "name": "OneLine.Example.Editor",
+    "references": [
+        "UDBase.Extensions",
+        "OneLine.Editor"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

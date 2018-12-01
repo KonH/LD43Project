@@ -1,0 +1,176 @@
+v.0.18.0
+Extensions:
+- Unity-Weld;
+
+v.0.17.0
+Fixes:
+- Prevent IL2CPP compilation issue;
+- Range label is now shown properly;
+- UIElement: correct initial state without AutoShow;
+Features:
+- RandomUtils.GetItem with elements weight;
+- Add AppVersionText component;
+Enchancements:
+- Added dictionary get rundom item method;
+- Added common dict utils;
+- Adds explicit constructors to easyiest setup save items from code;
+- Add callback to initialize UIOverlay;
+- UIElement.Switch method;
+
+v.0.16.0
+Features:
+- ULogger;
+- Unity 2018.1.0f2 support;
+Fixes:
+- Fix non-cleanup issue on UIElements;
+- Fix asmdef-related issues;
+Extensions:
+- Zenject updated;
+
+v.0.15.0
+Feature:
+- FsJsonNetworkConfig with FsJsonDataConfig fallback and FsJsonResourcesConfig defaults;
+Refactoring:
+- Move common logics to FsJsonBaseConfig;
+
+v.0.14.0
+Fixes:
+- Workaround for asmdef usage with OneLIne;
+- Correct way to use asmdef with editor scripts;
+- Fade animation naming in add component menu;
+Extensions:
+- OneLine updated;
+
+v.0.13.0
+New controller:
+- Analytics;
+Features:
+- String functor to avoid allocations when it isn’t required;
+Enchantment: 
+- OneLine usage for more useful configuration;
+Fixes:
+- Raise scene load event only once, when loading scene already passed;
+
+v.0.12.0
+Breaking changes:
+- Removed: CompositeEnum, UDBaseConfig, JsonUtils, AssetUtils, CoroutineHelper, ICustomUpdate, EnumUtility, ApplicationQuitTracker, UnityCallbackTracker, UnityHelper, UpdateHelper;
+- Log tags replaced with log context;
+Improvements:
+- Docs moved to GitHub wiki and now generated from sources;
+- RandomUtils;
+- Assembly definition files used;
+Extensions:
+- OneLine;
+Other:
+- Utility to update docs;
+
+v.0.11.0
+New controllers:
+- Localization;
+- SaveLocalization;
+Fixes:
+- FxJsonNodeContainer: don't cache null values;
+- Log: Fix wrong calls;
+Improvements:
+- ActionButton.UpdateState method;
+
+
+v.0.10.0
+Breaking changes:
+- IController, ControllerHelper, InventoryController deprecated;
+- Custom dependency-management replaced with Zenject;
+Features:
+- Unity 2017.3.0f3 support;
+- Installers;
+- BuildType;
+Improvements:
+- Updated project structure;
+New controller:
+- LocalLeaderboard;
+New extensions:
+- Zenject;
+- ClassTypeReference;
+Removed extensions:
+- Rider plugin;
+
+v.0.9.0
+New controllers: 
+- Audio;
+- Sound;
+- Music;
+Features:
+- UnityHelper: Add(Persistant/Scene)StartCallback for make actions on app/scene Start();
+- Combined enum feature;
+- LogTags uses combined enum;
+- Ability to create child objects using helper methods;
+- Unity 2017.1.1f1 support;
+- Type safe content loading at runtime;
+- ContentHolder to prevent wrong ContentId setup in Inspector;
+Improvements:
+- ContentId.ToString() with caching;
+Fixes:
+- Correct way to load first scene;
+- Correct event unsubscribe for monoBehaviours;
+- Scene_Loaded called correctly in AsyncSceneLoader;
+
+v.0.8.0
+- New controller: Leaderboard;
+- Utils: WebClient for requests to web api with basic authorization;
+- NetUtils: now UnityWebRequest is used;
+- New controller: User;
+- Tweens: RotationTween component;
+- Extensions: DOTween updated to 1.1.575;
+
+v.0.7.0
+- UnityHelper: methods to start coroutines, methods to get-or-create components;
+- NetUtils: basic tool to send www requests;
+- UpdateHelper: now you can subscribe for Update callbacks with ICustomUpdate interface and UpdateHelper class (x5-x10 faster than direct Update method and work with non-mono-behaviour, but it is not safe);
+- ApplicationQuitTracker: using this class you can track when application is closing, initialized in Scheme.PostInit();
+- IController: Reset method for further usage;
+- AssetUtils: New utils class to work with unity assets;
+- Helpers: docs about usuful common tools added;
+- UI: Now you can use multiple UIAnimations on one UIElement using UIAnimationController (step-by-step or parallel);
+- PlayerPrefsUtils: class with GetBool method;
+- Visual Logger: save/load current settings, UI improvements;
+
+v.0.6.0
+- UISystem basics;
+
+v.0.5.0
+- New controller: UTime;
+- Save: Save.GetItem() autoFill argument to create new instance if save file not exist yet;
+- Scene: Scene.ReloadScene() can work without scene loaded using Scene controller;
+- RandomUtils: GetItem() from IEnumerable collection, GetEnumValue();
+- Extensions: DOTween;
+
+v.0.4.1
+- Schemes: namespace problem in menu items generation fixed;
+
+v.0.4.0
+- Content: ContentSystem for local and AssetBundles asset loading added;
+- Inventory: you can use ItemView directly, if you need item name only;
+- Inventory: now pack transitions using TransitionHelper is available;
+- Inventory: UI components to show packs as item list and control pack transitions;
+- Editor: AssetUtility;
+- ObjectPool script added;
+
+v.0.3.0
+- Events: basic EventController, Events window;
+- ControllerHelper: IsActive() method;
+- Save: optional versioning;
+- Config, Save, VisualLog, Json containers: error handling;
+- RandomUtils basics;
+
+v.0.2.0
+- New controller: Inventory;
+- FullSerializer replaced UnityJsonUtility for Config/Save controllers;
+- Json format limitations removed;
+- ConfigSystem: AddList(), GetItem() methods;
+- SceneSystem: Scene.CurrentScene, Scene.ReloadScene(), extended SceneParam properties;
+- Refactoring: namespace usage, access changes, format issues;
+- Tests: project structure checks, SchemeManager, Scheme;
+
+v.0.1.0
+- First in-dev version;
+- Scheme architecture and tools;
+- Controllers: Config, Log, Save, Scene;
