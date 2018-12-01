@@ -2708,7 +2708,7 @@ GameObject:
   - component: {fileID: 656854498}
   - component: {fileID: 656854499}
   m_Layer: 5
-  m_Name: End
+  m_Name: State
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4374,7 +4374,7 @@ GameObject:
   - component: {fileID: 1014289028}
   - component: {fileID: 1014289030}
   m_Layer: 5
-  m_Name: View
+  m_Name: EndView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

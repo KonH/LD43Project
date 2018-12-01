@@ -60,6 +60,7 @@ namespace Controllers {
 		}
 
 		public PrefabSpawner Spawner;
+		public float BloodCoeff;
 		
 		public string StateName;
 		
@@ -103,7 +104,7 @@ namespace Controllers {
 
 		public void OnKill() {
 			var count = 30;
-			_blood.Current += count;
+			_blood.Current += count * BloodCoeff;
 			Spawner.Spawn(count);
 		}
 	}

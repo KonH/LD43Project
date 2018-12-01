@@ -2747,6 +2747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawner: {fileID: 114171066662944430}
+  BloodCoeff: 0.5
   StateName: 
 --- !u!136 &136630219017456514
 CapsuleCollider:
