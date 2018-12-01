@@ -6,6 +6,7 @@ using UnityStandardAssets.Characters.ThirdPerson;
 using Utils;
 using ViewModels;
 using Zenject;
+using Random = UnityEngine.Random;
 
 namespace Controllers {
 	[RequireComponent(typeof(AICharacterControl))]
@@ -29,11 +30,11 @@ namespace Controllers {
 			public IdleState(WalkerController owner) : base(owner) {}
 
 			public override void OnEnter() {
-				_time = 3.0f;
+				_time = Random.Range(0.75f, 2.25f);
 			}
 			
 			public override void Update() {
-				if ( _time > _timer ) {
+				if ( _timer > _time ) {
 					Owner.SwitchState(new WalkState(Owner));
 				} else {
 					_timer += Time.deltaTime;
@@ -71,7 +72,10 @@ namespace Controllers {
 		
 		void Awake() {
 			_control = GetComponent<AICharacterControl>();
-			SwitchState(new IdleState(this));
+		}
+
+		void Start() {
+			SwitchState(new WalkState(this));
 		}
 
 		[Inject]
