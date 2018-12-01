@@ -1,12 +1,15 @@
+using UDBase.Installers;
 using ViewModels;
-using Zenject;
 
 namespace Utils {
-	public class SceneInstaller : MonoInstaller {
+	public class SceneInstaller : UDBaseSceneInstaller {
 		public WaypointSet Waypoints;
 		public BloodViewModel BloodViewModel;
 		
 		public override void InstallBindings() {
+			AddDirectSceneLoader();
+			AddEmptyLogger();
+			AddEvents();
 			Container.BindInstance(Waypoints);
 			Container.BindInstance(BloodViewModel);
 		}

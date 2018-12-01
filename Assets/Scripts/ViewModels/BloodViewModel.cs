@@ -14,6 +14,7 @@ namespace ViewModels {
 			set {
 				var newValue = Mathf.Clamp(value, 0, Max);
 				if ( Math.Abs(newValue - _current) > Mathf.Epsilon ) {
+					Income += Mathf.Max(newValue - _current, 0);
 					_current = newValue;
 					OnPropertyChanged();
 					OnPropertyChanged(nameof(Normalized));
@@ -22,7 +23,9 @@ namespace ViewModels {
 		}
 
 		[Binding]
-		public float Normalized => (float)Current / Max;
+		public float Normalized => Current / Max;
+		
+		public float Income { get; private set; }
 
 		public float Start;
 		public float Max;
@@ -32,7 +35,7 @@ namespace ViewModels {
 		float _current = 0;
 
 		void Awake() {
-			Current = Start;
+			_current = Start;
 		}
 
 		[NotifyPropertyChangedInvocator]

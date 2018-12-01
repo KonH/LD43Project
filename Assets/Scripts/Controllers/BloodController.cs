@@ -1,3 +1,4 @@
+using Interactors;
 using Spawners;
 using UnityEngine;
 using ViewModels;
@@ -6,6 +7,7 @@ using Zenject;
 namespace Controllers {
 	public class BloodController : MonoBehaviour {
 		public GameObject Player;
+		public GameStateViewModel GameStateViewModel;
 		public float DecreaseValue;
 
 		BloodViewModel _blood;
@@ -26,6 +28,9 @@ namespace Controllers {
 			Player.gameObject.SetActive(false);
 			Player.GetComponent<PrefabSpawner>().Spawn(50);
 			enabled = false;
+			var kills = Player.GetComponent<WalkerInteractor>().Count;
+			var blood = _blood.Income;
+			GameStateViewModel.End(kills, (int)blood);
 		}
 	}
 }
